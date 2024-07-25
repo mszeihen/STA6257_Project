@@ -80,6 +80,8 @@ graphviz.plot(dag, layout = "fdp")
 
 bn_fitted <- bn.fit(dag, data = dataset, method = "bayes")
 
+# Plotting the chart to see the inference in the network
+
 # Convert to gRain object for further manipulation
 junction <- compile(as.grain(bn_fitted))
 
@@ -91,3 +93,22 @@ svg("bayesian_network_chart.svg", width = 16, height = 12, pointsize = 12)
 
 graphviz.chart(bn_fitted, type = "barprob", grid = FALSE, scale = c(3, 2.5), bar.col = "green", strip.bg = "lightgray")
 dev.off()
+
+# Testing the model with the following evidences:
+
+
+# Define evidence
+evidence <- list(age = "Middle", education = "Bachelors", occupation = "Prof-specialty", hours.per.week = "FullTime")
+
+# Compile the Bayesian Network
+bn_grain <- as.grain(bn_fitted)
+
+# Set evidence in the compiled network
+bn_grain <- setEvidence(bn_grain, nodes = names(evidence), states = as.character(evidence))
+
+# Query the network for the income variable
+query_result <- querygrain(bn_grain, nodes = "income")
+
+print(query_result)
+
+
