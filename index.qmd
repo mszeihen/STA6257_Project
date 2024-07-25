@@ -475,7 +475,7 @@ head(dataset) %>%
 | marital.status |                          Marital Status |
 | occupation     |                              occupation |
 | relationship   |                     family relationship |
-| race           |                                         |
+| race           |                               Ethnicity |
 | sex            |                                  Gender |
 | capital.gain   |                            Capital Gain |
 | capital.loss   |                            Capital Loss |
