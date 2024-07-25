@@ -701,11 +701,36 @@ Idea - create the paramter learning CPT
 
 </p>
 
-<p style="color: blue;">
+![Figure 3: Zoom in the chart plot of the model - Inference around the
+evidences](img/Topleft_Chatplot.png){style="display: block; margin: 0 auto;"
+fig-alt="Alt text"}
 
-Idea - use belief propagation to comput probabilities
+The image above displays the chart plot generated from our Bayesian
+network model, created using the `bnlearn` and `Rgraphviz` packages in
+RStudio. Due to the complexity of the full model and readability issues,
+we simplified the model by excluding the `native.country` feature, which
+had an excessive number of categories compared to
+the `occupation`feature (as shown in Figure 3). The chart visually
+represents the Conditional Probability Tables (CPTs) of the Bayesian
+network, providing insights into the relationships between variables and
+their conditional distributions. Specifically, the chart highlights how
+the probability of different income levels is influenced by various
+factors in the network. For the final output, the model predicts that
+approximately 75.9% of individuals earn \<= \$50,000, while 24.1% earn
+\> \$50,000. This interpretation reflects the likelihood of income
+categories based on the conditional dependencies defined in the network,
+offering a clear view of the income distribution and its influencing
+factors.
 
-</p>
+The occupation data indicates a male-dominated field with a significant
+proportion of younger individuals, a predominant White racial
+demographic, and a broad range of educational backgrounds. This profile
+reflects the diverse nature of the job categories represented, with
+Craft-repair, Exec-managerial, Administrative, Prof-speciality, and
+Sales jobs encompassing varying levels of education and appealing to
+different age and gender groups. The analysis highlights important
+trends and potential areas for addressing disparities within these
+occupations.
 
 Decision Support:
 
