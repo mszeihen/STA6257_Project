@@ -1,0 +1,158 @@
+---
+format: html
+    code-fold: true
+---
+
+(need to expand on this section since we changed data set and goal)
+
+dataset link:
+<https://www.kaggle.com/datasets/uciml/adult-census-income>
+
+The main goal is to predict whether an individual's income exceeds
+\$50,000 per year based on various demographic and employment-related
+attributes.
+
+### II-1. Steps to create a Bayesian netowrk
+
+<figure style="text-align: center;">
+
+<img src="img/Screenshot 2024-07-11_at_8.53.32 PM.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"/>
+
+<figcaption>Figure 2: Steps necessary to build and use BNs for safety
+and reliability analysis [@Sigurdsson2001]</figcaption>
+
+</figure>
+
+Here are the descriptions for each step, as described in "Bayesian
+belief nets for managing expert judgment and modeling reliability"
+[@Sigurdsson2001].
+
+**1. Identify Variables**
+
+The first step in constructing a Bayesian Network is to identify and
+include all relevant variables for the model. These variables represent
+the different aspects of the problem domain that need to be analyzed.
+Variables can be continuous or discrete and should be chosen based on
+their relevance to the problem and available data. With continuous
+variables, the work will be more complicated regarding discretization
+because we should base our analysis on expert knowledge. On the other
+hand, discrete variables are easier to handle but provide less
+information about the data.
+
+**2. Identify Network Structure**
+
+The first step in constructing a Bayesian Network is to identify and
+include all relevant variables for the model. These variables represent
+the different aspects of the problem domain that need to be analyzed.
+Variables can be continuous or discrete and should be chosen based on
+their relevance to the problem and available data. With continuous
+variables, the work will be more complicated regarding discretization
+because we should base our analysis on expert knowledge. On the other
+hand, discrete variables are easier to handle but provide less
+information about the data. [@scutari2009learning]
+
+The BNLearn package in R provides various algorithms for learning the
+network structure from data, such as the Hill-Climbing algorithm, Tabu
+search, and constraint-based methods like the PC algorithm. Using the
+graphviz.plot() function from the Rgraphviz package, which also supports
+visualization.
+
+**3. Specify Conditional Probabilities**
+
+After establishing the network structure, the next step is specifying
+each variable's conditional probability distributions. Each node in the
+network must define its conditional probability distribution given its
+parent nodes. Then, we can get the conditional probability tables (CPT),
+the results interface of our modelization.
+
+\<span style="color:blue"\>
+
+Idea - Look over the joint probability function and the chain rule of
+probabilities.
+
+</span>
+
+These probabilities can be estimated from data or provided by domain
+experts. The BNLearn package can fit these probabilities to data using
+maximum likelihood estimation or Bayesian estimation methods.
+[@heckerman1995tutorial]
+
+**4. Enter Evidence**
+
+Entering Evidence involves incorporating observed values for certain
+variables into the Bayesian Network, often called "instantiating" or
+"clamping" variables. This process updates the network to reflect the
+current state of knowledge, enabling the computation of posterior
+probabilities for other variables. The purposes of entering Evidence
+include conditioning the network to calculate posterior probabilities of
+unobserved variables, aiding in medical diagnosis by using symptoms or
+test results to identify the likelihood of diseases and supporting
+decision-making by updating beliefs based on the most probable outcomes.
+The process involves identifying which variables have observed values
+from real-world data, experimental results, or expert knowledge and then
+updating the network with these values to adjust the probabilities
+accordingly..
+
+The cpquery function in BNLearn enables entering Evidence, conditioning
+on it, and querying the network to determine the posterior probabilities
+of the remaining variables.
+
+**5. Propagate**
+
+Propagation in a Bayesian Network refers to computing the posterior
+distributions of the unobserved variables given the observed Evidence.
+One can perform propagation using various exact and approximate
+inference algorithms.
+
+Belief propagation in Bayesian networks, as described in
+[@pearl1986fusion], involves the iterative updating of probabilities
+through the network's nodes to achieve a consistent set of beliefs. This
+process leverages the network's structure, which encodes conditional
+dependencies among variables, allowing for the efficient computation of
+marginal and joint probabilities. The joint probability function plays a
+central role, as it is decomposed into a product of conditional
+probabilities corresponding to the network's edges.
+
+Through belief propagation, local computations are performed at each
+node, combining incoming messages (probability distributions) from
+neighboring nodes and sending updated messages back. This iterative
+exchange continues until convergence, enabling the network to
+incorporate new evidence and update beliefs consistently across the
+entire system. Pearl's framework revolutionized probabilistic reasoning
+by making complex probabilistic inference computationally feasible.
+
+The joint probability function is a fundamental concept in probability
+theory and statistics, representing the probability of simultaneous
+occurrences of a set of random variables. For a set of random variables
+$X_1, X_2, \ldots, X_n$, the joint probability function
+$P(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n)$ gives the likelihood that
+these variables take on specific values $(x_1, x_2, \ldots, x_n)$. In
+the context of Bayesian networks, the joint probability distribution of
+a set of variables can be factorized into a product of conditional
+probabilities based on the network's structure, which is typically a
+directed acyclic graph (DAG). This factorization is expressed as:
+
+$P(X_1, X_2, \ldots, X_n) = \prod_{i=1}^n P(X_i \mid \text{Parents}(X_i))$,
+
+where $\text{Parents}(X_i)$ denotes the set of parent nodes for the node
+$(X_i)$ in the Bayesian network. This factorization leverages the
+conditional independence properties encoded in the network,
+significantly simplifying the computation of the joint distribution.
+[@friedman1997bayesian]
+
+The BNLearn package provides functions like "grain" for exact inference
+and "bn.fit" for approximate inference using sampling methods such as
+Markov Chain Monte Carlo (MCMC).
+
+**6. Interpret Result**
+
+The final step is to interpret the results obtained from the propagation
+step. Interpreting results involves analyzing the posterior
+distributions to make decisions and predictions or to gain insights into
+the relationships between variables. [@cowell2003probabilistic]
+
+Users can visualize the results using various plotting functions BNLearn
+offers, such as "graphviz.plot" to display the network structure and
+conditional probability tables. Due to issues with "graphviz.chart" not
+displaying all results correctly, we will utilize the CPT as an
+interface here.

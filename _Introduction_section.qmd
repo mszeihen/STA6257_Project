@@ -1,0 +1,239 @@
+---
+title: "Untitled"
+---
+
+In this study, we employ Bayesian Networks to predict whether
+individuals earn more than \$50,000 annually based on demographic and
+employment-related attributes from the Adult Income Dataset. We use
+Bayesian Networks to model probabilistic dependencies among variables,
+providing a structured approach to understanding income factors. The
+goal is to develop a predictive model that identifies key factors
+influencing these income levels, offering a methodical approach to
+understanding socioeconomic dynamics.
+
+## I-1. What is a "Bayesian Network"?
+
+A Bayesian network, a belief network, or a probabilistic graphical model
+represents a set of variables and their conditional dependencies via a
+Directed Acyclic Graph (DAG). [@pearl1986fusion] EEach node in the graph
+represents a random variable, and the edges between the nodes represent
+probabilistic dependencies among these variables. Bayes' theorem is a
+fundamental concept used in this network. Bayes' theorem describes the
+probability of an event based on prior knowledge of conditions that
+might be related to the event. The formula for Bayes' theorem is 
+$$
+P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
+$$
+
+This equation describes how to update the probability of a hypothesis
+$(A)$ given new evidence $(B)$. Here, $P(A \mid B)$ is the posterior
+probability (the probability of $(A)$ given $(B)$), $P(B \mid A)$ is the
+likelihood (the probability of $(B)$ given $(A)$, $P(A)$ is the prior
+probability (the initial probability of $(A)$, and $P(B)$ is the
+marginal probability (the total probability of $(B)$. The theorem's
+formulation is crucial for understanding how evidence impacts our belief
+in a hypothesis by combining prior knowledge with new evidence to
+provide an updated probability [@Gelman2022]
+
+## I-2. What is the Bayesian Theorem?
+
+A simple Bayesian network can be visualized as a directed acyclic graph
+(DAG) with nodes representing random variables and directed edges
+representing conditional dependencies between these variables.
+[@koller2009probabilistic]
+
+<figure style="text-align: center;">
+
+<img src="img/Simple_Bayesian_Student.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"/>
+
+<figcaption>Figure 1: Simple Bayesian Network</figcaption>
+
+</figure>
+
+Bayesian networks leverage Bayes' theorem to update the probabilities of
+various hypotheses given new Evidence, allowing for probabilistic
+reasoning and decision-making under uncertainty. The process involves
+defining the network structure and conditional probabilities,
+calculating joint and marginal probabilities, and applying Bayes'
+theorem to infer the posterior probabilities. [@koller2009probabilistic]
+
+An illustrative example of Bayes' Theorem in action is the Bertrand box
+paradox. This paradox involves three boxes, one with two gold coins, one
+with two silver coins, and one with one gold and one silver coin. If a
+coin is randomly drawn from a box and it turns out to be gold, Bayes'
+Theorem helps calculate the probability that the box with one gold and
+one silver coin was chosen. The theorem updates the probability based on
+the new evidence (the gold coin drawn) and the prior probability of each
+box being chosen. [@Flusser1984]
+
+This paradox is often used to describe the Bayes' Theorem. But instead
+of having two draws with outcomes being gold and silver, it's the TV
+game show where a presenter make choose a player one of the three doors.
+Behind two of them are goats and behind one of them there is a car. Once
+the player made his choice, the presenter of the show will open one door
+where there is a goat and ask him if he wants to change door. By using
+the Bayes' Theorem on this case, the result gives that the player has
+more chance to get the car by changing door. The whole principle of the
+Bayes' equation is used in the Bayesian Networks when taking a look at
+the conditional probability tables.
+
+### I-3. What are the advantages of using Bayesian Networks
+
+Data analysis offers a variety of tools like rule-based systems,
+decision trees, and artificial neural networks, along with techniques
+such as density estimation, classification, regression, and clustering.
+[@heckerman1995tutorial] What unique advantages do Bayesian networks and
+Bayesian methods bring to the table in this landscape?
+
+In the paper "A Bayesian Method for the Induction of Probabilistic
+Networks from Data"[@cooper1992bayesian], here are some of the
+advantages mentioned using Bayesian Networks:
+
+__Handling Incomplete Data:__
+
+Bayesian networks facilitate learning causal relationships, which are
+crucial for understanding complex systems and making predictions under
+interventions. For example, determining if increasing advertisement
+exposure causes higher product sales can be analyzed using Bayesian
+networks, even without direct experimental data.
+
+__Learning Causal Relationships:__
+
+Bayesian networks facilitate learning causal relationships, which are
+crucial for understanding complex systems and making predictions under
+interventions. For example, determining if increasing advertisement
+exposure causes higher product sales can be analyzed using Bayesian
+networks, even without direct experimental data.
+
+__Combining Domain Knowledge and Data:__
+
+Bayesian networks seamlessly integrate domain knowledge (prior
+knowledge) with data. This domain knowledge is particularly beneficial
+when data is limited or costly. Their causal semantics make it
+straightforward to incorporate prior knowledge about causal
+relationships, enhancing the accuracy and reliability of predictions.
+
+__Avoiding Overfitting:__
+
+Bayesian networks provide an efficient approach to prevent overfitting.
+They achieve this by "smoothing" models using all available data during
+training, eliminating the need to reserve data for testing purposes.
+Using all data ensures that models generalize well to new data and avoid
+capturing noise or spurious patterns from the training data.
+
+### I-4. Applications of Bayesian Networks
+
+We widely apply Bayesian networks across diverse fields due to their
+capabilities in modeling probabilistic relationships. A few examples
+are - In healthcare, they are used to examine how psychiatric,
+demographic, and socioeconomic variables interrelate
+[@bilek2018investigation]; in supply chain management, they can play a
+crucial role in assessing risks, evaluating resilience and analyzing
+ripple effects - aiding in making informed decisions among
+uncertainties[@hosseini2020bayesian]. In political studies, they can
+assist in predicting online participation patterns by analyzing user
+interactions and engagement metrics [@kopacheva2021predicting]. Bayesian
+networks provide dynamic modeling, learning, and inference - enabling an
+understanding of evolving systems over time in various applications
+[@shiguihara2021dynamic]. All these example applications underscore the
+utility of Bayesian networks in addressing complex probabilistic
+challenges across different domains and further their practical
+usefulness.
+
+### I-5. Components of Bayesian Networks
+
+Bayesian networks are sophisticated models that represent probabilistic
+relationships among variables using a directed acyclic graph (DAG). The
+primary components of Bayesian networks include nodes, edges, and
+conditional probability distributions, each playing a crucial role in
+defining the network's structure and behavior.
+
+Nodes in a Bayesian network represent random variables. The
+classification of these variables falls into several categories based on
+their roles within the network. Parent nodes have outgoing edges to
+other nodes, signifying causal or influential relationships. On the
+other hand, child nodes are the recipients of these edges, representing
+variables influenced or caused by the parent nodes. Additionally,
+evidence nodes are those for which we have observed data; using these
+observations can update the beliefs about other variables in the
+network. Query nodes are the variables of interest for which we seek to
+compute posterior probabilities given the Evidence. This categorization
+helps organize and understand the information flow within the network
+[@pearl1986fusion].
+
+Edges in a Bayesian network are directed and represent probabilistic
+dependencies between the nodes. An edge from node A to node B indicates
+that A is a parent of B, and the probability distribution of B is
+conditionally dependent on the state of A. This directional relationship
+is a critical aspect of Bayesian networks, as it encodes the causal
+assumptions and the flow of influence among the variables es
+[@pearl1986fusion].
+
+The structure of a Bayesian network is a directed acyclic graph (DAG). A
+DAG is a directed graph containing no cycles. It is impossible to start
+at any node and follow a consistent direction along the edges to return
+to the starting node. This acyclic property is fundamental because it
+ensures no infinite loop in the probabilistic dependencies, allowing for
+coherent probabilistic inferences. The DAG structure facilitates the
+decomposition of the joint probability distribution of the variables
+into a product of conditional probability distributions, greatly
+simplifying the representation and computation of complex probabilistic
+models[@koller2009probabilistic].
+
+Probabilistic inferences in Bayesian networks involve computing the
+posterior probabilities of query nodes given the evidence nodes. This
+process uses the network's structure and the conditional probability
+distributions to propagate information and update beliefs. One of the
+key concepts in performing these inferences is conditional independence,
+which allows for significant computational efficiency. Conditional
+independence means that a variable is independent of another variable
+given a set of other variables, reducing the number of direct
+dependencies that need to be considered [@koller2009probabilistic].
+
+Lastly, the conditional probability tree represents the conditional
+probability distributions associated with each node in the network.
+These trees show how each node's probability depends on its parent
+nodes' states, providing a visual and computational tool for working
+with the network's probabilistic relationships [@pearl1986fusion].
+
+Understanding these components, nodes, edges, the directed acyclic
+graph, probabilistic inferences, conditional independence, and the
+conditional probability tree provides a foundational framework for
+working with Bayesian networks, enabling the modeling of complex systems
+with interdependent variables in a structured and efficient manner.
+
+### I-6. Limitations of Bayesian Networks
+
+Although Bayesian networks are valuable in modeling and predicting
+probabilistic relationships, they have their limitations that can hinder
+effectiveness.
+
+**Complexity**: One issue is their complexity, which increases with the
+number of variables introduced. Complexity makes Bayesian Networks
+computationally intensive to build and maintain for large, highly
+connected networks, making real-time inference and updates challenging.
+Data Requirements: Bayesian networks are largely data-driven; thus, the
+data requirements make sparse data sets potentially compromise
+reliability.
+
+**Assumptions**: Bayesian networks mainly involve assumptions in
+defining relationships between variables and often use expert inputs,
+thus being open to subjectivity and biases [@kubsch2021beyond]. Bayesian
+models assume that variables are conditionally independent given their
+parents in the network. In this case, violations of these assumptions
+affect the correctness of the predictions made with these models.
+
+**Structure:** The structure is another critical limitation. Developing
+a Bayesian network structure does not automatically adapt to new data or
+changes in the problem domain.
+
+**Scalability**: Scalability is a significant limitation: Large networks
+require substantial computational effort for exact inference and
+typically rely on approximations, resulting in lower accuracy, noting
+this significant limitation [@jewell2009bayesian]. Bayesian networks are
+also limited in that they cannot model complex relationships and
+nonlinearity between variables; it makes them less successful in
+modeling real-world complex interactions compared to other approaches,
+say, neural networks. These limitations stress that careful application
+and possible use of hybrid methodologies may be necessary when solving
+complex problems with Bayesian networks.

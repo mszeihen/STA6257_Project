@@ -3,49 +3,25 @@ title: "Project Slides"
 format: revealjs
 ---
 
-## Bayesian Theorem
-
-```{r, child='Slide_Michael_1.qmd'}
-
-```
-
-## Bayesian Network
-
-```{r, child='Slide_Michael_2.qmd'}
-
-```
-
-## Methodology Used 
-
-```{r, child='Slide_Seth_1.qmd'}
-
-```
-
-## DAG and CPT Explained
-```{r, child='Slide_Seth_2.qmd'}
-
-```
-
-## Data Used
-
-```{r, child='Slide_Sara_1.qmd'}
-
-```
-
-## Data Exploration
-
-```{r, child='Slide_Sara_2.qmd'}
-
-```
-
-## Data Analysis
+## Introduction
 
 ```{r, child='Slide_Maxime_1.qmd'}
 
 ```
 
+## Methodology Used 
+
+```{r, child='Slide_Michael_1.qmd'}
+
+```
+
+## Data Exploration and Analysis
+```{r, child='Slide_Seth_1.qmd'}
+
+```
+
 ## Conclusion
 
-```{r, child='Slide_Maxime_2.qmd'}
+```{r, child='Slide_Sara_1.qmd'}
 
 ```
