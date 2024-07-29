@@ -3,3 +3,6 @@ title: "Untitled"
 format: html
 ---
 
+# Where are we ?
+
+![](img/Maxime_Slide1_timeline.png){fig-align="center"}
