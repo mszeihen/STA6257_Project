@@ -1,6 +1,7 @@
 ---
-title: "Project Slides"
+title: "Bayesian Network- What We Learned"
 format: revealjs
+css: style.css
 ---
 
 ## Introduction
@@ -20,8 +21,26 @@ format: revealjs
 
 ```
 
-## Conclusion
+
+## Study Overview:
 
 ```{r, child='Slide_Sara_1.qmd'}
+
+```
+
+## Main Outcomes:
+
+```{r, child='Slide_Sara_2.qmd'}
+
+```
+
+## Main Outcomes (Part II):
+
+```{r, child='Slide_Sara_3.qmd'}
+
+```
+## Conclusion
+
+```{r, child='Slide_Sara_4.qmd'}
 
 ```

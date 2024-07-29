@@ -1,2 +1,5 @@
 
-this is a test 3
+
+Goal: Determine the likelihood of a person's income being above or below $50,000 using BN.
+Determining factors include variables such as age, level of education, type of job, marital status, occupation, race, gender, capital gains, capital loss, hours worked per week, and country of origin.
+Objective: Find out the major factors that determine the income levels.

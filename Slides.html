@@ -10,7 +10,7 @@
 <link href="Slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.361">
 
-  <title>Project Slides</title>
+  <title>Bayesian Network- What We Learned</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,7 @@
     }
   </style>
   <link rel="stylesheet" href="Slides_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="style.css">
   <link href="Slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -324,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Project Slides</h1>
+  <h1 class="title">Bayesian Network- What We Learned</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -335,14 +336,26 @@
 </section>
 <section id="methodology-used" class="slide level2">
 <h2>Methodology Used</h2>
-<p>slide 1</p>
 </section>
 <section id="data-exploration-and-analysis" class="slide level2">
 <h2>Data Exploration and Analysis</h2>
 </section>
+<section id="study-overview" class="slide level2">
+<h2>Study Overview:</h2>
+<p>Goal: Determine the likelihood of a person’s income being above or below $50,000 using BN. Determining factors include variables such as age, level of education, type of job, marital status, occupation, race, gender, capital gains, capital loss, hours worked per week, and country of origin. Objective: Find out the major factors that determine the income levels.</p>
+</section>
+<section id="main-outcomes" class="slide level2">
+<h2>Main Outcomes:</h2>
+<p>Education: Individuals with high levels of education are very likely to earn an income of over $50,000. Those having a professional or advanced degree increase the likelihood of this outcome more than two times. Gender Differences: Males generally have higher probabilities of earning over $50,000 across various education levels and occupations compared to females, highlighting the persistent gender wage gap. Occupation: Occupation directly influences income levels. High-income probabilities are associated with roles such as executive-managerial and professional specialty, while lower-paying occupations show much lower probabilities of high income. Age: Age significantly affects income distribution. Younger individuals (aged 18 to 39) are more likely to earn less than $50,000, while middle-aged individuals (aged 40 to 64) have higher probabilities of earning over $50,000, reflecting career progression and work experience.</p>
+</section>
+<section id="main-outcomes-part-ii" class="slide level2">
+<h2>Main Outcomes (Part II):</h2>
+<p>Model Performance: The categorization procedure used for the study predicts the income categorization with an accuracy of ~79.1%.</p>
+<p>Insight: While the model explains complex relationships through conditional probabilities making it a valuable tool for a wide variety of sciences, it is not as accurate as a few other methods.</p>
+</section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
-<p>this is a test 3</p>
+<p>Usefulness: The results help in understanding the major determinants of income and explain how these determinants are interrelated. Limitations: BNs are arguably not the strongest in prediction power. The confusion matrix for our predictions showed that the model has an overall accuracy of ~79.14%. This indicates that while BNs offer valuable insights and detailed conditional probability tables (CPTs), their predictive accuracy may be more limited compared to other methods.</p>
 <div class="footer footer-default">
 
 </div>

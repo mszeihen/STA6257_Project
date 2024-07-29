@@ -1,5 +1,8 @@
 ---
-title: "Untitled"
 format: html
 ---
 
+Education: Individuals with high levels of education are very likely to earn an income of over $50,000. Those having a professional or advanced degree increase the likelihood of this outcome more than two times.
+Gender Differences: Males generally have higher probabilities of earning over $50,000 across various education levels and occupations compared to females, highlighting the persistent gender wage gap.
+Occupation: Occupation directly influences income levels. High-income probabilities are associated with roles such as executive-managerial and professional specialty, while lower-paying occupations show much lower probabilities of high income.
+Age: Age significantly affects income distribution. Younger individuals (aged 18 to 39) are more likely to earn less than $50,000, while middle-aged individuals (aged 40 to 64) have higher probabilities of earning over $50,000, reflecting career progression and work experience.

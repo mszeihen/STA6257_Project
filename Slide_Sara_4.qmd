@@ -1,0 +1,7 @@
+---
+format: html
+---
+
+
+Usefulness: The results help in understanding the major determinants of income and explain how these determinants are interrelated. 
+Limitations: BNs are arguably not the strongest in prediction power. The confusion matrix for our predictions showed that the model has an overall accuracy of ~79.14%. This indicates that while BNs offer valuable insights and detailed conditional probability tables (CPTs), their predictive accuracy may be more limited compared to other methods.

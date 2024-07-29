@@ -1,0 +1,7 @@
+---
+format: html
+---
+
+Model Performance: The categorization procedure used for the study predicts the income categorization with an accuracy of ~79.1%.
+
+Insight: While the model explains complex relationships through conditional probabilities making it a valuable tool for a wide variety of sciences, it is not as accurate as a few other methods.

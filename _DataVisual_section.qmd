@@ -6,11 +6,16 @@ format: html
 
 ## III-1. Dataset and description
 
+dataset Adult Income:
+<https://www.kaggle.com/datasets/uciml/adult-census-income>
+
 This data was sourced from the 1994 Census Bureau database by Ronny
 Kohavi and Barry Becker [@misc_adult_2]They extracted a set of
 relatively clean records using these criteria: ((AAGE\>16) && (AGI\>100)
 && (AFNLWGT\>1) && (HRSWK\>0)). (Becker and Kohavi 1996) The objective
 is to predict whether an individual earns more than \$50K annually.
+
+
 
 ```{r, echo=T}
 dataset <- read.csv("data/adult.csv")

@@ -5,6 +5,7 @@ date: '`r Sys.Date()`'
 format:
   html:
     code-fold: true
+    backgroundcolor: "#ffd8ae"
 course: STA 6257 - Advanced Statistical Modeling
 bibliography: references.bib # file contains bibtex for references
 #always_allow_html: true # this allows to get PDF with HTML features
