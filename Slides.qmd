@@ -38,11 +38,23 @@ css: style.css
 
 
 ## Data Exploration and Analysis
+
+__Key Findings in Income Distribution – Graph Explorations__
 ```{r, child='Slide_Seth_1.qmd'}
 
 ```
+## Data Exploration and Analysis (Part II)
 
+__Age and Education Impact on Income__
+```{r, child='Slide_Seth_2.qmd'}
 
+```
+## Data Exploration and Analysis (Part III)
+
+__Gender and Occupation - Impact on Income__
+```{r, child='Slide_Seth_3.qmd'}
+
+```
 ## Study Overview:
 
 ```{r, child='Slide_Sara_1.qmd'}

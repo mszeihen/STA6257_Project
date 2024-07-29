@@ -3,3 +3,17 @@ title: "Untitled"
 format: html
 ---
 
+
+__Age and Income:__
+- Young (18-39) mostly earn ≤ $50,000.
+- Middle-aged (40-64) more likely to earn > $50,000.
+
+
+__Education and Income:__
+- Higher education correlates with higher income.
+- Doctorate holders predominantly earn > $50,000.
+
+
+__Gender and Income:__
+- Males have a higher representation in > $50,000 earnings.
+- Females predominantly earn ≤ $50,000.

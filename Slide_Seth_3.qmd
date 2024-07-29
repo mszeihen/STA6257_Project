@@ -1,0 +1,13 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+__Gender Disparity:__
+- Higher percentage of males earn > $50,000.
+- Females are less represented in high-income brackets.
+
+__Occupational Categories:__
+- "Exec-managerial" and "Prof-specialty" have higher earnings.
+- "Adm-clerical" and "Other-Service" are female-dominated but lower earning.

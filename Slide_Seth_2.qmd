@@ -3,3 +3,11 @@ title: "Untitled"
 format: html
 ---
 
+
+__Age Distribution:__
+- Majority of young individuals earn ≤ $50,000.
+- Middle-aged individuals have higher income potential.
+
+__Education Levels:__
+- Doctorate and Master's degrees lead to higher earnings.
+- High school graduates and some college education mostly earn ≤ $50,000.
