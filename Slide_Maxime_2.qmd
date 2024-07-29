@@ -2,11 +2,11 @@
 format: html
 ---
 
-# What are we talking about ?
+__What are we talking about ?__
 
 ![(Gelman 2022)](img/Maxime_Slide2_BayesTheorem.png){fig-align="center" width="305"}
 
-### Useful components:
+__Useful components:__
 
 -   Nodes (Evidence or Query)
 
@@ -14,6 +14,6 @@ format: html
 
 -   Inference (through conditional probabilities
 
-### Example:
+__Example:__
 
 ![(Koller and Friedman, 2009)](img/Maxime_Slide2_Dag.png){fig-align="center" width="219"}

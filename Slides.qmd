@@ -18,7 +18,7 @@ css: style.css
 
 ## Introduction (Part III)
 
-```{r, child='Slide_Maxime_2.qmd'}
+```{r, child='Slide_Maxime_3.qmd'}
 
 ```
 

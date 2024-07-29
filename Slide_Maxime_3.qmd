@@ -2,7 +2,7 @@
 format: html
 ---
 
-# Advantages and limitations
+__Advantages and limitations__
 
 **(+) Handling incomplete data**
 
