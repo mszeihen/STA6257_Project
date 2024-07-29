@@ -10,6 +10,18 @@ css: style.css
 
 ```
 
+## Introduction (Part II)
+
+```{r, child='Slide_Maxime_2.qmd'}
+
+```
+
+## Introduction (Part III)
+
+```{r, child='Slide_Maxime_2.qmd'}
+
+```
+
 ## Methodology Used 
 
 ```{r, child='Slide_Michael_1.qmd'}

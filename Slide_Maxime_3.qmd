@@ -1,3 +1,17 @@
 ---
 format: html
 ---
+
+# Advantages and limitations
+
+**(+) Handling incomplete data**
+
+**(+) Learning causal relationship**
+
+**(+) Avoiding Overfitting**
+
+**(-) Complexity**
+
+**(-) Assumptions (e.g. Kubsch et al. 2021)**
+
+**(-) Scalability (e.g. Jewell et al. 2009)**
