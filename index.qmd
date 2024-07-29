@@ -61,7 +61,6 @@ library(dplyr)
 
 ```
 
-
 # IV Conclusion
 
 ```{r, child='_Conclusion_section.qmd'}
