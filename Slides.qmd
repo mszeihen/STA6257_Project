@@ -16,6 +16,15 @@ css: style.css
 
 ```
 
+## Methodology Used (Part II)
+
+```{r, child='Slide_Michael_2.qmd'}
+
+
+
+```
+
+
 ## Data Exploration and Analysis
 ```{r, child='Slide_Seth_1.qmd'}
 

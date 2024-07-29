@@ -3,3 +3,22 @@ format: html:
     code-fold: true
 
 ---
+- A Bayesian network is a powerful tool used for modeling and reasoning about uncertainty in complex systems.
+
+. . . 
+
+- Building a Bayesian Network involves six key steps:
+1.	Identify Variables
+2.	Identify Network Structure
+3.	Specify Conditional Probabilities
+4.	Enter Evidence
+5.	Propagate
+6.	Interpret Results
+
+. . . 
+
+- The goal is to build an ACyclic Graph to allow us to make predictions of Income based on Seen Observations and Infer the Unseen Observation
+
+. . . 
+
+- We plan to test our model from test data harvested from the Adult Income Data Set

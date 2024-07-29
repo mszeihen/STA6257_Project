@@ -3,11 +3,6 @@ format: html
     code-fold: true
 ---
 
-(need to expand on this section since we changed data set and goal)
-
-dataset link:
-<https://www.kaggle.com/datasets/uciml/adult-census-income>
-
 The main goal is to predict whether an individual's income exceeds
 \$50,000 per year based on various demographic and employment-related
 attributes.
