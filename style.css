@@ -1,3 +1,7 @@
-body {
-    background-color: #f0c89c; /* Replace with your desired color */
-  }
+.reveal {
+  background-color: #f1b379;
+}
+
+.reveal .slides section {
+  background-color: #f1b379;
+}
