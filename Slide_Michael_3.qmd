@@ -6,9 +6,21 @@ __Directed Acyclic Graph(DAG)__
 
 <figure style="text-align: center;">
 
-<img src="img/DAG_income.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"/>
+<img src="img/DAG_income.png" alt="Alt text" style="display: block; margin: 0 auto; width: 70%;"/>
 
 <figcaption>Acyclic Adult Income Network</figcaption>
 
 </figure>
 
+## Strategies to Create
+
+. . . 
+
+1.	Domain or Expert Knowledge
+
+. . . 
+
+2.	Search based Algorithms:
+    - constraint-based (growth-shrink)
+    - score-based (Hill climbing)
+    - hybrid methods (Min Max Hill Climbing)

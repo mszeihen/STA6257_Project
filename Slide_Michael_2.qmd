@@ -4,7 +4,7 @@ format: html
 ---
 
 
-- The goal is to build an ACyclic Graph to allow us to make predictions of Income based on Seen Observations and Infer the Unseen Observation
+- The goal is to build an Bayesian Network represented by a Directed Acyclic Graph(DAG), the network will allow us to make predictions of Income based on Seen Observations and Infer the Unseen Observation
 
 . . . 
 

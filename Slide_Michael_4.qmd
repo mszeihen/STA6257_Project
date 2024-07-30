@@ -16,4 +16,30 @@ __Prediction Accuracy__
 |-----------|
 | 0.7912476 |
 
+## How to Imporve
+
+. . .
+
+1. Better Data Processing
+    - Data Cleaning, Feature Engineering
+
+. . .
+
+2. Structure learning algorithms
+    - Greedy search Algorithings > Hill Climbing
+    
+. . .
+
+3. Parameter Learning
+    - Maximum Likelihood Estimation
+    
+. . .
+
+4. Regularization
+    - Parameter Priors
+    
+. . .
+
+5. Hyperparameterization
+    - grid search
 

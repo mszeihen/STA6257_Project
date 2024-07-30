@@ -414,7 +414,7 @@ Timeline
 <section id="methodology-used-part-ii" class="slide level2">
 <h2>Methodology Used (Part II)</h2>
 <ul>
-<li>The goal is to build an ACyclic Graph to allow us to make predictions of Income based on Seen Observations and Infer the Unseen Observation</li>
+<li>The goal is to build an Bayesian Network represented by a Directed Acyclic Graph(DAG), the network will allow us to make predictions of Income based on Seen Observations and Infer the Unseen Observation</li>
 </ul>
 <div class="fragment">
 <ul>
@@ -426,11 +426,29 @@ Timeline
 <h2>Methodology Used (Part III)</h2>
 <p><strong>Directed Acyclic Graph(DAG)</strong></p>
 <figure style="text-align: center;">
-<p><img src="img/DAG_income.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"></p>
+<p><img src="img/DAG_income.png" alt="Alt text" style="display: block; margin: 0 auto; width: 70%;"></p>
 <figcaption>
 Acyclic Adult Income Network
 </figcaption>
 </figure>
+</section>
+<section id="strategies-to-create" class="slide level2">
+<h2>Strategies to Create</h2>
+<div class="fragment">
+<ol type="1">
+<li>Domain or Expert Knowledge</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Search based Algorithms:
+<ul>
+<li>constraint-based (growth-shrink)</li>
+<li>score-based (Hill climbing)</li>
+<li>hybrid methods (Min Max Hill Climbing)</li>
+</ul></li>
+</ol>
+</div>
 </section>
 <section id="methodology-result" class="slide level2">
 <h2>Methodology Result</h2>
@@ -478,6 +496,49 @@ Acyclic Adult Income Network
 </tr>
 </tbody>
 </table>
+</section>
+<section id="how-to-imporve" class="slide level2">
+<h2>How to Imporve</h2>
+<div class="fragment">
+<ol type="1">
+<li>Better Data Processing
+<ul>
+<li>Data Cleaning, Feature Engineering</li>
+</ul></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Structure learning algorithms
+<ul>
+<li>Greedy search Algorithings &gt; Hill Climbing</li>
+</ul></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Parameter Learning
+<ul>
+<li>Maximum Likelihood Estimation</li>
+</ul></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li>Regularization
+<ul>
+<li>Parameter Priors</li>
+</ul></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="5" type="1">
+<li>Hyperparameterization
+<ul>
+<li>grid search</li>
+</ul></li>
+</ol>
+</div>
 </section>
 <section id="data-exploration-and-analysis" class="slide level2">
 <h2>Data Exploration and Analysis</h2>
