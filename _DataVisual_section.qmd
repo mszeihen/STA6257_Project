@@ -256,14 +256,27 @@ predictions <- predict(bn_fitted, node = node_to_predict, data = test_data)
 
 ## Evaluate the model
 confusion_matrix <- table(predictions, test_data$income)
-print(confusion_matrix)
+#print(confusion_matrix)
 
 # Calculate accuracy
 accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
-print(paste("Accuracy:", accuracy))
+#print(paste("Accuracy:", accuracy))
 
 
 ```
+__Confusion Matrix__
+
+|               |            | Predicted Positive | Predicted Negative|  
+|:--------------|:-----------|------------------:|------------------:|
+|               |            |<=50K              | >50K              |
+|Actual Postive |      <=50K | 6015(TP)          |1083(FN)           |
+|Actual Negative|      >50K  |  806(FP)          |1145 (TN)          |
+
+__Prediction Accuracy__
+
+|Accuracy   |
+|-----------|
+| 0.7912476 |
 
 [CPTs for Income](cpt.html)
 

@@ -1,14 +1,11 @@
 ---
+title: "Untitled"
 format: html
 ---
 
-__Directed Acyclic Graph(DAG)__ 
 
-<figure style="text-align: center;">
+- The goal is to build an ACyclic Graph to allow us to make predictions of Income based on Seen Observations and Infer the Unseen Observation
 
-<img src="img/DAG_income.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"/>
+. . . 
 
-<figcaption>Acyclic Adult Income Network</figcaption>
-
-</figure>
-
+- We plan to test our model from test data harvested from the Adult Income Data Set

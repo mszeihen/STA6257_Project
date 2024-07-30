@@ -2,15 +2,13 @@
 format: html
 ---
 
-::: {.panel-tabset}
-## Result
+__Directed Acyclic Graph(DAG)__ 
 
+<figure style="text-align: center;">
 
+<img src="img/DAG_income.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"/>
 
+<figcaption>Acyclic Adult Income Network</figcaption>
 
-## Code
+</figure>
 
-
-
-:::
-```

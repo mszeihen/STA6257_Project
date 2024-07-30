@@ -41,8 +41,20 @@ css: style.css
 
 
 ```
+## Methodology Used (Part III)
+
+```{r, child='Slide_Michael_3.qmd'}
 
 
+
+```
+## Methodology Result
+
+```{r, child='Slide_Michael_4.qmd'}
+
+
+
+```
 ## Data Exploration and Analysis
 
 __Key Findings in Income Distribution – Graph Explorations__

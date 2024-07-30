@@ -1,0 +1,19 @@
+---
+format: html
+---
+
+__Confusion Matrix__
+
+|               |            | Predicted Positive | Predicted Negative|  
+|:--------------|:-----------|------------------:|------------------:|
+|               |            |<=50K              | >50K              |
+|Actual Postive |      <=50K | 6015(TP)          |1083(FN)           |
+|Actual Negative|      >50K  |  806(FP)          |1145 (TN)          |
+
+__Prediction Accuracy__
+
+|Accuracy   |
+|-----------|
+| 0.7912476 |
+
+
