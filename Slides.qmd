@@ -1,5 +1,6 @@
 ---
 title: "Bayesian Network- What We Learned"
+subtitle: "Members: Michael Zeihen, Seth Henry, Sarah Burns, Maxime Martin"
 format: revealjs
 css: style.css
 ---
