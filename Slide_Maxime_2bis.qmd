@@ -1,0 +1,7 @@
+---
+format: html
+---
+
+__Example:__
+
+![(Koller and Friedman, 2009)](img/Maxime_Slide2_Dag.png){fig-align="center" width="219"}
