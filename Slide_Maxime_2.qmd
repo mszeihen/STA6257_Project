@@ -12,5 +12,5 @@ __Useful components:__
 
 -   Edges
 
--   Inference (through conditional probabilities
+-   Inference (through conditional probabilities)
 

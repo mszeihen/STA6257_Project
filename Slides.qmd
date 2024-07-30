@@ -10,9 +10,15 @@ css: style.css
 
 ```
 
-## Introduction (Part II)
+## Introduction (Part II-a)
 
 ```{r, child='Slide_Maxime_2.qmd'}
+
+```
+
+## Introduction (Part II-b)
+
+```{r, child='Slide_Maxime_2bis.qmd'}
 
 ```
 

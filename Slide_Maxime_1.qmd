@@ -6,7 +6,7 @@ format: html
 
 <figure style="text-align: center;">
 
-<img src="img/Maxime_Slide1_timeline.png" alt="Alt text" style="display: block; margin: 0 auto; width: 50%;"/>
+<img src="img/Maxime_Slide1_timeline.png" alt="Alt text" style="display: block; margin: 0 auto; " width="69%"/>
 
 <figcaption>Timeline</figcaption>
 
