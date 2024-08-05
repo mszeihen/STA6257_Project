@@ -1,5 +1,8 @@
 ---
 title: "Untitled"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 In this study, we employ Bayesian Networks to predict whether
@@ -15,13 +18,12 @@ understanding socioeconomic dynamics.
 
 A Bayesian network, a belief network, or a probabilistic graphical model
 represents a set of variables and their conditional dependencies via a
-Directed Acyclic Graph (DAG). [@pearl1986fusion] EEach node in the graph
+Directed Acyclic Graph (DAG). [@pearl1986fusion] Each node in the graph
 represents a random variable, and the edges between the nodes represent
 probabilistic dependencies among these variables. Bayes' theorem is a
-fundamental concept used in this network. Bayes' theorem describes the
-probability of an event based on prior knowledge of conditions that
-might be related to the event. The formula for Bayes' theorem is 
-$$
+fundamental concept used in this network. It describes the probability
+of an event based on prior knowledge of conditions that might be related
+to the event. The formula for Bayes' theorem is $$
 P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
 $$
 
@@ -30,9 +32,9 @@ $(A)$ given new evidence $(B)$. Here, $P(A \mid B)$ is the posterior
 probability (the probability of $(A)$ given $(B)$), $P(B \mid A)$ is the
 likelihood (the probability of $(B)$ given $(A)$, $P(A)$ is the prior
 probability (the initial probability of $(A)$, and $P(B)$ is the
-marginal probability (the total probability of $(B)$. The theorem's
-formulation is crucial for understanding how evidence impacts our belief
-in a hypothesis by combining prior knowledge with new evidence to
+marginal probability (the total probability of $(B)$). The formulation
+of this theorem is crucial for understanding how evidence impacts our
+belief in a hypothesis by combining prior knowledge with new evidence to
 provide an updated probability [@Gelman2022]
 
 ## I-2. What is the Bayesian Theorem?
@@ -89,7 +91,7 @@ In the paper "A Bayesian Method for the Induction of Probabilistic
 Networks from Data"[@cooper1992bayesian], here are some of the
 advantages mentioned using Bayesian Networks:
 
-__Handling Incomplete Data:__
+**Handling Incomplete Data:**
 
 Bayesian networks facilitate learning causal relationships, which are
 crucial for understanding complex systems and making predictions under
@@ -97,7 +99,7 @@ interventions. For example, determining if increasing advertisement
 exposure causes higher product sales can be analyzed using Bayesian
 networks, even without direct experimental data.
 
-__Learning Causal Relationships:__
+**Learning Causal Relationships:**
 
 Bayesian networks facilitate learning causal relationships, which are
 crucial for understanding complex systems and making predictions under
@@ -105,7 +107,7 @@ interventions. For example, determining if increasing advertisement
 exposure causes higher product sales can be analyzed using Bayesian
 networks, even without direct experimental data.
 
-__Combining Domain Knowledge and Data:__
+**Combining Domain Knowledge and Data:**
 
 Bayesian networks seamlessly integrate domain knowledge (prior
 knowledge) with data. This domain knowledge is particularly beneficial
@@ -113,7 +115,7 @@ when data is limited or costly. Their causal semantics make it
 straightforward to incorporate prior knowledge about causal
 relationships, enhancing the accuracy and reliability of predictions.
 
-__Avoiding Overfitting:__
+**Avoiding Overfitting:**
 
 Bayesian networks provide an efficient approach to prevent overfitting.
 They achieve this by "smoothing" models using all available data during
