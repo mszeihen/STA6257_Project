@@ -1,21 +1,16 @@
 ---
 format: html
     code-fold: true
+editor: 
+  markdown: 
+    wrap: 72
 ---
-
 
 ## III-1. Dataset and description
 
-dataset Adult Income:
-<https://www.kaggle.com/datasets/uciml/adult-census-income>
+dataset Adult Income: <https://www.kaggle.com/datasets/uciml/adult-census-income>
 
-This data was sourced from the 1994 Census Bureau database by Ronny
-Kohavi and Barry Becker [@misc_adult_2]They extracted a set of
-relatively clean records using these criteria: ((AAGE\>16) && (AGI\>100)
-&& (AFNLWGT\>1) && (HRSWK\>0)). (Becker and Kohavi 1996) The objective
-is to predict whether an individual earns more than \$50K annually.
-
-
+This data was sourced from the 1994 Census Bureau database by Ronny Kohavi and Barry Becker [@misc_adult_2] They extracted a set of relatively clean records using these criteria: ((AAGE\>16) && (AGI\>100) && (AFNLWGT\>1) && (HRSWK\>0)). The objective is to predict whether an individual earns more than \$50K annually.
 
 ```{r, echo=T}
 dataset <- read.csv("data/adult.csv")
@@ -55,94 +50,43 @@ head(dataset) %>%
 | native.country |                      Native nationality |
 | income         |                                  income |
 
-**Age:** Age is divided into three categories to account for the
-differences in education level and career progression. Younger
-individuals may still be in college and may not be as advanced in their
-career paths.
+**Age:** Age is divided into three categories to account for the differences in education level and career progression. Younger individuals may still be in college and may not be as advanced in their career paths.
 
 → Categories: Young, Middle, Retired → Dependencies: Education
 
-**Workclass:** Type of employment affects income. There are vast
-variations in salary and benefits, as well as different career
-opportunities among different fields of study/work. → Categories:
-Federal-gov, Local-gov, Private, Self-employed-inc,
-Self-employed-not-inc, State-gov, Without-pay, etc. → Dependencies:
-Hours per Week
+**Workclass:** Type of employment affects income. There are vast variations in salary and benefits, as well as different career opportunities among different fields of study/work. → Categories: Federal-gov, Local-gov, Private, Self-employed-inc, Self-employed-not-inc, State-gov, Without-pay, etc. → Dependencies: Hours per Week
 
-**Education:** TThe level of education attained is a significant
-determinant because it typically measures eligibility for particular
-jobs, career promotion opportunities, and earnings. A higher education
-level means more income compared to lower education. → Categories:
-10th - 12th grade, HS-grad, Some-college, Assoc-acdm, Assoc-voc,
-Bachelors, Masters, Prof-school, etc. → Dependencies: Occupation
+**Education:** TThe level of education attained is a significant determinant because it typically measures eligibility for particular jobs, career promotion opportunities, and earnings. A higher education level means more income compared to lower education. → Categories: 10th - 12th grade, HS-grad, Some-college, Assoc-acdm, Assoc-voc, Bachelors, Masters, Prof-school, etc. → Dependencies: Occupation
 
-**Marital Status:** Marital status indicates the status of household
-dynamics and economic dependencies, which affect the level of income.
-For instance, married individuals may benefit from dual incomes, whereas
-divorced or widowed individuals may be responsible for other fiscal
-commitments and constraints. → Categories: Unmarried, Divorced,
-Separated, Never-married, Widowed, etc. → Dependencies: Relationship
+**Marital Status:** Marital status indicates the status of household dynamics and economic dependencies, which affect the level of income. For instance, married individuals may benefit from dual incomes, whereas divorced or widowed individuals may be responsible for other fiscal commitments and constraints. → Categories: Unmarried, Divorced, Separated, Never-married, Widowed, etc. → Dependencies: Relationship
 
-**Occupation:** The nature of the occupation directly determines income
-levels as a function of the varied pay scales and promotional
-opportunities among the different occupational categories. → Categories:
-Exec-managerial, Machine-op-inspct, Prof-speciality, Adm-clerical,
-Other-service, etc. → Dependencies: Workclass
+**Occupation:** The nature of the occupation directly determines income levels as a function of the varied pay scales and promotional opportunities among the different occupational categories. → Categories: Exec-managerial, Machine-op-inspct, Prof-speciality, Adm-clerical, Other-service, etc. → Dependencies: Workclass
 
-**Relationship:** The family relationship status might affect income
-because of financial dependencies or household dynamics such as a family
-with kids or no kids. → Categories: Not-in-family, Unmarried, Own-child,
-Other-relative, etc. → Dependencies: Income
+**Relationship:** The family relationship status might affect income because of financial dependencies or household dynamics such as a family with kids or no kids. → Categories: Not-in-family, Unmarried, Own-child, Other-relative, etc. → Dependencies: Income
 
-**Race: Ethnicity.** → Categories: Black, White, Asian-Pac-Islander,
-etc. → Dependencies: Occupation, Education
+**Race: Ethnicity.** → Categories: Black, White, Asian-Pac-Islander, etc. → Dependencies: Occupation, Education
 
-**Capital Gain:** Capital gain means additional sources of income and
-represents money invested financially, which influences total income. →
-Categories: Low, etc. → Dependencies: Income
+**Capital Gain:** Capital gain means additional sources of income and represents money invested financially, which influences total income. → Categories: Low, etc. → Dependencies: Income
 
-**Capital Loss:** Loss from Investments. → Categories: Low, etc. →
-Dependencies: Income
+**Capital Loss:** Loss from Investments. → Categories: Low, etc. → Dependencies: Income
 
-**Hours per Week:** The hours put in work per week are directly
-associated with income, as it affects earnings coming through wages or
-salary. → Categories: Partime, FullTime, Overtime, etc. → Dependencies:
-Income
+**Hours per Week:** The hours put in work per week are directly associated with income, as it affects earnings coming through wages or salary. → Categories: Partime, FullTime, Overtime, etc. → Dependencies: Income
 
-**Native Country:** Country of birth can affect income due to the effect
-of educational opportunities, conditions in the job market, and economic
-policy. → Category: United States, Mexico, Greece, etc. → Dependencies:
-Income
+**Native Country:** Country of birth can affect income due to the effect of educational opportunities, conditions in the job market, and economic policy. → Category: United States, Mexico, Greece, etc. → Dependencies: Income
 
-**Sex: Gender of Individual:** → Categories: Male, Female →
-Dependencies: Occupation, Education
+**Sex: Gender of Individual:** → Categories: Male, Female → Dependencies: Occupation, Education
 
 ### III-1.b Data pre-processing:
 
-Column Exclusions: We excluded the columns 'fnlwgt' and 'education.num'
-from the dataset. 'Education.num' duplicates the information already
-captured by the 'education' column, which represents education levels
-comprehensively. We removed 'Fnlwgt,' which contained Current Population
-Survey (CPS) weights because Bayesian Networks focus on modeling causal
-relationships among variables. CPS weights are statistical adjustments
-applied after sampling to correct biases rather than causal factors.
+Column Exclusions: We excluded the columns 'fnlwgt' and 'education.num' from the dataset. 'Education.num' duplicates the information already captured by the 'education' column, which represents education levels comprehensively. We removed 'Fnlwgt,' which contained Current Population Survey (CPS) weights because Bayesian Networks focus on modeling causal relationships among variables. CPS weights are statistical adjustments applied after sampling to correct biases rather than causal factors.
 
-Age Grouping: Age groups were defined to create bins for our Bayesian
-Network modeling. We categorized individuals aged 18 to 39 as 'Young,'
-40 to 64 as 'Middle,' and individuals aged 65 to 100 as 'Retired.'
+Age Grouping: Age groups were defined to create bins for our Bayesian Network modeling. We categorized individuals aged 18 to 39 as 'Young,' 40 to 64 as 'Middle,' and individuals aged 65 to 100 as 'Retired.'
 
-Capital Gain and Loss Grouping: We categorized capital gain and loss
-into distinct groups: 'Low' (0 to 4,999), 'Medium' (5,000 to 9,999),
-'High' (10,000 to 19,999), and 'Rich' (20,000 to 100,000).
+Capital Gain and Loss Grouping: We categorized capital gain and loss into distinct groups: 'Low' (0 to 4,999), 'Medium' (5,000 to 9,999), 'High' (10,000 to 19,999), and 'Rich' (20,000 to 100,000).
 
-Hours per Week Grouping: To facilitate analysis in our Bayesian network,
-hours worked per week were grouped into 'Partime' (0 to 34 hours),
-'Fulltime' (35 to 39 hours), and 'Overtime' (40 to 200 hours) bins.
+Hours per Week Grouping: To facilitate analysis in our Bayesian network, hours worked per week were grouped into 'Partime' (0 to 34 hours), 'Fulltime' (35 to 39 hours), and 'Overtime' (40 to 200 hours) bins.
 
-Factor Conversion: To facilitate modeling, we converted the following
-columns into categorical factors: 'race,' 'native.country', 'workclass,'
-'education,' 'marital.status', 'occupation,' 'relationship,' 'sex,' and
-'income.'
+Factor Conversion: To facilitate modeling, we converted the following columns into categorical factors: 'race,' 'native.country', 'workclass,' 'education,' 'marital.status', 'occupation,' 'relationship,' 'sex,' and 'income.'
 
 ```{r, echo=T}
 # Data transformation
@@ -264,17 +208,18 @@ accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
 
 
 ```
-__Confusion Matrix__
 
-|               |            | Predicted Positive | Predicted Negative|  
-|:--------------|:-----------|------------------:|------------------:|
-|               |            |<=50K              | >50K              |
-|Actual Postive |      <=50K | 6015(TP)          |1083(FN)           |
-|Actual Negative|      >50K  |  806(FP)          |1145 (TN)          |
+**Confusion Matrix**
 
-__Prediction Accuracy__
+|                 |        | Predicted Positive | Predicted Negative |
+|:----------------|:-------|-------------------:|-------------------:|
+|                 |        |             \<=50K |              \>50K |
+| Actual Postive  | \<=50K |           6015(TP) |           1083(FN) |
+| Actual Negative | \>50K  |            806(FP) |          1145 (TN) |
 
-|Accuracy   |
+**Prediction Accuracy**
+
+| Accuracy  |
 |-----------|
 | 0.7912476 |
 
@@ -282,89 +227,35 @@ __Prediction Accuracy__
 
 Conditional Probability Table (CPT) on Sex, Education, and Occupation in Determining Income.
 
-To shorten a CPT to analyze, we created a Bayesian Network model to capture the complex interactions between sex, education, and occupation in determining income. To display the power of probability distribution this simplified version allows to look at these interactions and have the Bayesian Network provide income probabilities based on these factors. 
+To shorten a CPT to analyze, we created a Bayesian Network model to capture the complex interactions between sex, education, and occupation in determining income. To display the power of probability distribution this simplified version allows to look at these interactions and have the Bayesian Network provide income probabilities based on these factors.
 
-In the analysis of the Conditional Probability Table, several themes were highlighted. Higher education levels generally correlate with a higher probability of earning more than $50K. For instance, females in executive-managerial roles have a 91.65% probability of making over $50K, while males in the same roles have a 90.47% probability.
+In the analysis of the Conditional Probability Table, several themes were highlighted. Higher education levels generally correlate with a higher probability of earning more than \$50K. For instance, females in executive-managerial roles have a 91.65% probability of making over \$50K, while males in the same roles have a 90.47% probability.
 
-Overall, there were differences in pay between genders. Males tend to have a higher probability of earning over $50K across various education levels and occupations compared to females. For example, in executive-managerial roles, males with a bachelor's degree have a 66.26% probability of earning more than $50K, compared to females at 10.98%. Another example is females with a professional school education in a professional specialty having a 47.14% probability of making more than $50K, while males in the same category have an 82.84% probability.
+Overall, there were differences in pay between genders. Males tend to have a higher probability of earning over \$50K across various education levels and occupations compared to females. For example, in executive-managerial roles, males with a bachelor's degree have a 66.26% probability of earning more than \$50K, compared to females at 10.98%. Another example is females with a professional school education in a professional specialty having a 47.14% probability of making more than \$50K, while males in the same category have an 82.84% probability.
 
-Differences in occupation also uniquely influence the level of education needed for higher income. For example, males with an associate degree in protective services have a 33.33% probability of earning over $50K, whereas those with a professional school degree in the same field have a 99.89% probability. For machine operators, males with an associate degree have a 30.77% probability of making more than $50K, while those with a bachelor's degree have a 34.78% probability. This shows a less drastic change compared to other occupations, but there is still a positive change with higher education.
+Differences in occupation also uniquely influence the level of education needed for higher income. For example, males with an associate degree in protective services have a 33.33% probability of earning over \$50K, whereas those with a professional school degree in the same field have a 99.89% probability. For machine operators, males with an associate degree have a 30.77% probability of making more than \$50K, while those with a bachelor's degree have a 34.78% probability. This shows a less drastic change compared to other occupations, but there is still a positive change with higher education.
 
-Females in professional roles with advanced degrees show higher income probabilities relative to other metrics for females. Females with a professional school degree in a professional specialty have a 47.14% probability of earning over $50K, and those with a master's degree in the same field show a 32.63% probability.
+Females in professional roles with advanced degrees show higher income probabilities relative to other metrics for females. Females with a professional school degree in a professional specialty have a 47.14% probability of earning over \$50K, and those with a master's degree in the same field show a 32.63% probability.
 
-Lastly, another highlight is that certain occupations combined with lower education levels show very low probabilities of earning over $50K. For example, machine operators, private household services, other services, and handlers-cleaners occupations mostly have probabilities under 1%, with some up to 8%, of earning more than $50K. This analysis underscores the significant impact of education and occupation on income, as well as the persistent gender disparities in earnings.
+Lastly, another highlight is that certain occupations combined with lower education levels show very low probabilities of earning over \$50K. For example, machine operators, private household services, other services, and handlers-cleaners occupations mostly have probabilities under 1%, with some up to 8%, of earning more than \$50K. This analysis underscores the significant impact of education and occupation on income, as well as the persistent gender disparities in earnings.
 
 <figure style="text-align: center;">
 
 <img src="img/Topleft_Chatplot.png" alt="Alt text" style="display: block; margin: 0 auto; width: 75%;"/>
 
-<figcaption>Figure 3: Zoom in the chart plot of the model - Inference around the
-evidences</figcaption>
+<figcaption>Figure 3: Zoom in the chart plot of the model - Inference around the evidences</figcaption>
 
 </figure>
 
+The image above displays the chart plot generated from our Bayesian network model, created using the `bnlearn` and `Rgraphviz` packages in RStudio. Due to the complexity of the full model and readability issues, we simplified the model by excluding the `native.country` feature, which had an excessive number of categories compared to the `occupation`feature (as shown in Figure 3). The chart visually represents the Conditional Probability Tables (CPTs) of the Bayesian network, providing insights into the relationships between variables and their conditional distributions. Specifically, the chart highlights how the probability of different income levels is influenced by various factors in the network. For the final output, the model predicts that approximately 75.9% of individuals earn \<= \$50,000, while 24.1% earn \> \$50,000. This interpretation reflects the likelihood of income categories based on the conditional dependencies defined in the network, offering a clear view of the income distribution and its influencing factors.
 
-The image above displays the chart plot generated from our Bayesian
-network model, created using the `bnlearn` and `Rgraphviz` packages in
-RStudio. Due to the complexity of the full model and readability issues,
-we simplified the model by excluding the `native.country` feature, which
-had an excessive number of categories compared to
-the `occupation`feature (as shown in Figure 3). The chart visually
-represents the Conditional Probability Tables (CPTs) of the Bayesian
-network, providing insights into the relationships between variables and
-their conditional distributions. Specifically, the chart highlights how
-the probability of different income levels is influenced by various
-factors in the network. For the final output, the model predicts that
-approximately 75.9% of individuals earn \<= \$50,000, while 24.1% earn
-\> \$50,000. This interpretation reflects the likelihood of income
-categories based on the conditional dependencies defined in the network,
-offering a clear view of the income distribution and its influencing
-factors.
-
-The occupation data indicates a male-dominated field with a significant
-proportion of younger individuals, a predominant White racial
-demographic, and a broad range of educational backgrounds. This profile
-reflects the diverse nature of the job categories represented, with
-Craft-repair, Exec-managerial, Administrative, Prof-speciality, and
-Sales jobs encompassing varying levels of education and appealing to
-different age and gender groups. The analysis highlights important
-trends and potential areas for addressing disparities within these
-occupations.
-
+The occupation data indicates a male-dominated field with a significant proportion of younger individuals, a predominant White racial demographic, and a broad range of educational backgrounds. This profile reflects the diverse nature of the job categories represented, with Craft-repair, Exec-managerial, Administrative, Prof-speciality, and Sales jobs encompassing varying levels of education and appealing to different age and gender groups. The analysis highlights important trends and potential areas for addressing disparities within these occupations.
 
 ## III-2. Data shaping and Visualization
 
-The distribution of income is significantly influenced by age.
-Individuals aged between 18 and 39 years typically earn \$50,000 or less
-annually. This is likely because they are in the early stages of their
-careers and have not yet attained a high level of education or
-substantial work experience. Conversely, those aged between 40 and 64
-years are more likely to earn over \$50,000 annually, reflecting their
-greater experience and more advanced career stages. Most workers are
-employed in the private sector, which tends to employ younger
-individuals with varying education levels, although at least a
-bachelor's degree is commonly observed. Notably, workers with a
-doctorate level of education often earn more than \$50,000 per year.
-Gender also plays a role in income distribution. Higher-earning
-individuals are predominantly male, with jobs in categories such as
-"exec-managerial" and "prof-specialty," which are typically
-male-dominated. In contrast, occupations often filled by women, such as
-"adm-clerical" and "other-service," generally lead to lower incomes.
-Most occupations with incomes above \$50,000 are in the
-"Exec-managerial" and "Prof-specialty" categories, followed by "Sales,"
-"Craft-repair," and "Adm-clerical." However, within each of these
-occupational categories, the majority of workers earn \$50,000 or less
-annually.
+The distribution of income is significantly influenced by age. Individuals aged between 18 and 39 years typically earn \$50,000 or less annually. This is likely because they are in the early stages of their careers and have not yet attained a high level of education or substantial work experience. Conversely, those aged between 40 and 64 years are more likely to earn over \$50,000 annually, reflecting their greater experience and more advanced career stages. Most workers are employed in the private sector, which tends to employ younger individuals with varying education levels, although at least a bachelor's degree is commonly observed. Notably, workers with a doctorate level of education often earn more than \$50,000 per year. Gender also plays a role in income distribution. Higher-earning individuals are predominantly male, with jobs in categories such as "exec-managerial" and "prof-specialty," which are typically male-dominated. In contrast, occupations often filled by women, such as "adm-clerical" and "other-service," generally lead to lower incomes. Most occupations with incomes above \$50,000 are in the "Exec-managerial" and "Prof-specialty" categories, followed by "Sales," "Craft-repair," and "Adm-clerical." However, within each of these occupational categories, the majority of workers earn \$50,000 or less annually.
 
-**Age Distribution by Income** Individuals between the ages of 18 and
-39, categorized as “young,” have a larger majority who are making
-\$50,000 or less a year. Individuals between the ages of 40 and 64,
-categorized as “middle,” have a higher number of people making over
-\$50,000. It is important to note that the “young” category has a much
-larger sample size. The amount of “middle-aged" individuals making over
-\$50,000 is not much larger than the amount of “young” individuals.
-Retired individuals have a much smaller sample size, with the majority
-making under \$50,000.
+**Age Distribution by Income** Individuals between the ages of 18 and 39, categorized as “young,” have a larger majority who are making \$50,000 or less a year. Individuals between the ages of 40 and 64, categorized as “middle,” have a higher number of people making over \$50,000. It is important to note that the “young” category has a much larger sample size. The amount of “middle-aged" individuals making over \$50,000 is not much larger than the amount of “young” individuals. Retired individuals have a much smaller sample size, with the majority making under \$50,000.
 
 ```{r,echo=T}
 
@@ -389,12 +280,7 @@ guides(fill = guide_legend(title = "Income"))
 
 **Workclass**
 
-The majority of individuals in the census data work in the private
-sector and make \$50,000 or less; this makes sense considering how a
-large percentage of individuals in the dataset are grouped in the
-“young” category. In addition, the trend in education is lower level
-education, such as being a high school graduate, having some college, or
-having a bachelor's.
+The majority of individuals in the census data work in the private sector and make \$50,000 or less; this makes sense considering how a large percentage of individuals in the dataset are grouped in the “young” category. In addition, the trend in education is lower level education, such as being a high school graduate, having some college, or having a bachelor's.
 
 ```{r,echo=T}
 ggplot(data = dataset, aes(x = workclass, fill = income)) +
@@ -417,13 +303,7 @@ guides(fill = guide_legend(title = "Income"))
 
 **Education**
 
-Most people in the census data have either graduated high school, have
-had some college, or have a bachelor’s degree. A vast majority of people
-who have obtained a doctorate degree make over \$50,000. About half of
-people who obtained their master’s make over \$50,000. A little under
-half of the people who obtained their bachelors make over \$50,000. Most
-people stopped their education at high school, or some college, and make
-under \$50,000.
+Most people in the census data have either graduated high school, have had some college, or have a bachelor’s degree. A vast majority of people who have obtained a doctorate degree make over \$50,000. About half of people who obtained their master’s make over \$50,000. A little under half of the people who obtained their bachelors make over \$50,000. Most people stopped their education at high school, or some college, and make under \$50,000.
 
 ```{r,echo=T}
 ggplot(data = dataset, aes(x = education, fill = income)) +
@@ -446,10 +326,7 @@ guides(fill = guide_legend(title = "Income"))
 
 **Number of Males and Females Making Above and Below \$50,000**
 
-Almost half of the data consists of males making under \$50,000. About a
-quarter of the data consists of males making over \$50,000. The other
-quarter consists of females making under \$50,000. There is a small
-percentage of the data with women making over \$50,000.
+Almost half of the data consists of males making under \$50,000. About a quarter of the data consists of males making over \$50,000. The other quarter consists of females making under \$50,000. There is a small percentage of the data with women making over \$50,000.
 
 ```{r,echo=T}
 
@@ -481,11 +358,7 @@ ggplot(sex_income_count, aes(x = "", y = count, fill = sex_income)) +
 
 **Number of Males and Females in Each Occupation**
 
-The more prominent occupations in the data are “Adm-clerical,”
-“Craft-repair,” “Exec-managerial,” Prof-speciality,” and “Sales.” Women
-predominantly work in “adm-clerical,” with the rest being male-dominated
-occupations. The only other women-dominated field is listed as
-“Other-Service.”
+The more prominent occupations in the data are “Adm-clerical,” “Craft-repair,” “Exec-managerial,” Prof-speciality,” and “Sales.” Women predominantly work in “adm-clerical,” with the rest being male-dominated occupations. The only other women-dominated field is listed as “Other-Service.”
 
 ```{r,echo=T}
 occupation_gender_count <- dataset %>%
@@ -504,13 +377,7 @@ ggplot(occupation_gender_count, aes(x = occupation, y = count, fill = sex)) +
 
 **Number of People in Each Occupation Making Over and Under \$50,000**
 
-The occupations that are paying over \$50,000 more than the rest of the
-occupations include “Exec-managerial,” “Prof-specialty,” “Sales,”
-“Craft-repair,” and “Adm-clerical.” The top occupations, though, are
-“Exec-managerial” and “Prof-specialty” by far. Most individuals are
-working in “Adm-clerical,” “Craf-repair,” “Other-Service,” and “Sales.”
-The vast majority of all individuals in the data make less than
-\$50,000.
+The occupations that are paying over \$50,000 more than the rest of the occupations include “Exec-managerial,” “Prof-specialty,” “Sales,” “Craft-repair,” and “Adm-clerical.” The top occupations, though, are “Exec-managerial” and “Prof-specialty” by far. Most individuals are working in “Adm-clerical,” “Craf-repair,” “Other-Service,” and “Sales.” The vast majority of all individuals in the data make less than \$50,000.
 
 ```{r,echo=T}
 occupation_income_count <- dataset %>%
